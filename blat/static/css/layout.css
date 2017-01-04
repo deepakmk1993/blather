@@ -1,0 +1,63 @@
+html {
+  box-sizing: border-box;
+}
+body {
+  color: #37b1ff;
+  font-weight: 600;
+  font-style: italic;
+  background: #eee;
+  margin:0; padding:0;
+	font-family: 'Segoe UI';
+}
+.container{
+  width: 98%;
+  margin: 0 auto;
+}
+h1,h2,h3,h4{
+  font-weight: 400;
+}
+a{
+  color: #D77174;
+  text-decoration:none;
+}
+a:hover{
+  color: #d44950;
+}
+header{
+  display: flex;
+  background: #41295a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #41295a , #2F0743); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #41295a , #2F0743); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+header .brand{
+  margin-top: 0;
+  font-size: 1.2em;
+  margin-right: auto;
+}
+header a:hover{
+  color: white;
+}
+header a{
+  padding: 12px;
+}
+.cards{
+  text-align: justify;
+}
+.panel{
+  margin: 2px;
+  border-radius: 4px;
+  text-align: justify;
+  border: 1px solid #337ab7;
+}
+.panel-body{
+  padding: 4px;
+  color: #8a6d3b;
+  min-height: 4em;
+  border-color: #faebcc;
+  background-color: #fcf8e3;
+}
+.panel-footer{
+  padding: 4px;
+  color: #fff;
+  background-color: #d9edf7;
+}

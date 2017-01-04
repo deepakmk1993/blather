@@ -1,0 +1,24 @@
+{% extends "blat/master.html" %}
+{% load humanize %}
+{% block title %}Blat Home Page{% endblock %}
+
+{% block content %}
+  {% if blat_list %}
+    {% for blat in blat_list %}
+    <div class="panel">
+      <div class="panel-body">
+       {{ blat.text }}
+      </div>
+      <div class="panel-footer">
+        <a href="{% url 'detail' pk=blat.id %}">{{ blat.created_on|naturaltime }}</a>
+        {% if blat.via %}
+          <a href="{{blat.via}}"><i>=>Via</i></a>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  {% else %}
+    <h1>:-(</h1>
+    No Blats to Show here.
+    {% endif %}
+{% endblock %}

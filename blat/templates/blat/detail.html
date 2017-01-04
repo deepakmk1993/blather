@@ -1,0 +1,18 @@
+{% extends "blat/master.html" %}
+
+{% block title %}Blat {{ blat.id }} Details{% endblock %}
+
+{% block content %}
+<div class="cards">
+    <div class="card">
+        <h4>{{ blat.text }}</h4>
+        <div class="card-copy">
+            {{ blat.created_on }}
+            {% if blat.via %}
+                <a href="{{blat.via}}"><i>Via</i></a>
+            {% endif %}
+        </div>
+        <a href="javascript:history.go(-1)">Back</a>
+    </div>
+</div>
+{% endblock %}

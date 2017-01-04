@@ -1,0 +1,19 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}Blather{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+</head>
+<body>
+  <header>
+    <a href="{% url 'homepage' %}" class="brand">Blather App</a>
+    <a href="{% url 'homepage' %}">Blats</a>
+    <a href="{% url 'admin:index' %}">Admin</a>
+  </header>
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>
