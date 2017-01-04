@@ -14,7 +14,7 @@ class IndexView(generic.ListView):
   context_object_name = 'blat_list'
 
   def get_queryset(self):
-    return Blat.objects.order_by('-created_on')[:20]
+    return Blat.objects.order_by('-created_on')[:10]
 
 
 class DetailView(generic.DetailView):
@@ -26,7 +26,7 @@ class DetailView(generic.DetailView):
 class MyView(IndexView):
 
   def get_queryset(self):
-    return Blat.objects.filter(created_by=self.request.user.id).order_by('-created_on')[:20]
+    return Blat.objects.filter(created_by=self.request.user.id).order_by('-created_on')[:10]
 
   @method_decorator(login_required)
   def dispatch(self, *args, **kwargs):
