@@ -62,7 +62,7 @@ header a{
 }
 .panel-footer{
   padding: 4px;
-  color: #fff;
+  /*color: #fff;*/
   background-color: #d9edf7;
 }
 #mycustomform{
