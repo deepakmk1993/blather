@@ -9,7 +9,3 @@ In case you want to run your Django application from the terminal just run:
 2) Run Django
 
     $ python manage.py runserver $IP:$PORT
-
-ubuntu
-deepak
-elements
