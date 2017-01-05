@@ -6,10 +6,11 @@
 <div class="cards">
   <div class="card">
     <h4>{{ blat.text }}</h4>
-    <div class="card-copy">
+    <div>
         {{ blat.created_on }}
+        by @{{blat.created_by}}
         {% if blat.via %}
-            <a href="{{blat.via}}"><i>Via</i></a>
+            <a href="{{blat.via}}"><b>Via</b></a>
         {% endif %}
         {% if blat.created_by == user %}
           <a href="{% url 'editblat' pk=blat.id %}">Edit Blat</a>
