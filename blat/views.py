@@ -31,3 +31,21 @@ class MyView(IndexView):
   @method_decorator(login_required)
   def dispatch(self, *args, **kwargs):
     return super(MyView, self).dispatch(*args, **kwargs)
+
+class NewBlatView(generic.edit.CreateView):
+  model = Blat
+  fields = ['text', 'via']
+  success_url = "/My-blats/"
+  
+  def form_valid(self, form):
+    form.instance.created_by = self.request.user
+    return super(NewBlatView, self).form_valid(form)
+
+class EditBlatView(generic.edit.UpdateView):
+  model = Blat
+  fields = ['text', 'via']
+  success_url = "/My-blats/"
+  
+  def get_queryset(self):
+    base_qs = super(EditBlatView, self).get_queryset()
+    return base_qs.filter(created_by=self.request.user)

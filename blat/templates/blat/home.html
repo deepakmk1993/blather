@@ -11,9 +11,12 @@
       </div>
       <div class="panel-footer">
         <a href="{% url 'detail' pk=blat.id %}">{{ blat.created_on|naturaltime }}</a>
-        {% if blat.via %}
         by @{{blat.created_by}}
-          <a href="{{blat.via}}"><i>=>Via</i></a>
+        {% if blat.via %}
+          <a href="{{blat.via}}"><b>/Via</b></a>
+        {% endif %}
+        {% if blat.created_by == user %}
+          <a href="{% url 'editblat' pk=blat.id %}">Edit Blat</a>
         {% endif %}
       </div>
     </div>

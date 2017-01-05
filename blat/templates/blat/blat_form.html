@@ -1,0 +1,10 @@
+{% extends "blat/master.html" %}
+
+{% block content %}
+<form action="" method="post" id="mycustomform">
+    <h1>Blat</h1>
+    {{form.as_p}}
+    <button type="submit">Login</button>
+    {% csrf_token %}
+</form>
+{% endblock %}
