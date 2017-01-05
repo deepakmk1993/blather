@@ -14,7 +14,7 @@ class IndexView(generic.ListView):
   context_object_name = 'blat_list'
 
   def get_queryset(self):
-    return Blat.objects.order_by('-created_on')[:10]
+    return Blat.objects.select_related('created_by').order_by('-created_on')[:10]
 
 
 class DetailView(generic.DetailView):
