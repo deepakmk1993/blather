@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="{% static 'css/layout.css' %}">
 </head>
 <body>
-  <header>
-    <a href="{% url 'homepage' %}" class="brand">Blather App</a>
+  <a href="#" class="toggleNav" onclick="menuToggle()">&#9776; Menu</a>
+  <header class="nav" id="menu">
+    <a href="{% url 'homepage' %}" id="brand">Blather App</a>
     <a href="{% url 'homepage' %}">Blats</a>
     <a href="{% url 'admin:index' %}">Admin</a>
     {% if user.is_authenticated %}
@@ -28,5 +29,18 @@
   <div class="container">
     {% block content %}{% endblock %}
   </div>
+  <script type="text/javascript">
+    function menuToggle(){
+      var mymenu = document.getElementById("menu");
+      (mymenu.className != "open")?(mymenu.className = "open"):(mymenu.className = "nav");
+  	}
+    var link = document.getElementById('menu').getElementsByTagName('a');
+    window.onload = function () {
+      for(var i=0; i<link.length; i++){
+        if (link[i].href === window.location.href)
+          link[i].className = "active";
+      }
+    };
+  </script>
 </body>
 </html>

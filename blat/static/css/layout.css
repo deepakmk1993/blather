@@ -34,11 +34,11 @@ header{
   display: flex;
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
-  background: #41295a; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #41295a , #2F0743); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #41295a , #2F0743); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #41295a;
+  background: -webkit-linear-gradient(to left, #41295a , #2F0743);
+  background: linear-gradient(to left, #41295a , #2F0743);
 }
-header .brand{
+header #brand{
   margin-top: 0;
   font-size: 1.2em;
   margin-right: auto;
@@ -67,12 +67,15 @@ header a{
 }
 .panel-footer{
   padding: 4px;
-  /*color: #fff;*/
   background-color: #d9edf7;
 }
 #mycustomform{
   max-width: 260px;
   margin: 2% auto;
+}
+label{
+  min-width: 75px;
+  display: inline-block;
 }
 input, button {
   padding: 4px;
@@ -88,22 +91,35 @@ button{
   background-color: #428bca;
 }
 button:hover{
-  background-image: -webkit-linear-gradient(#e72510, #d9230f 6%, #cb210e);
-  background-image: -o-linear-gradient(#e72510, #d9230f 6%, #cb210e);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e72510), color-stop(6%, #d9230f), to(#cb210e));
   background-image: linear-gradient(#e72510, #d9230f 6%, #cb210e);
   background-repeat: no-repeat;
   border: 1px solid #a91b0c;
 }
-label{
-  min-width: 75px;
-  display: inline-block;
-}
 .errorlist li{
   color: #e72510;
 }
+
+.toggleNav {
+  display: none;
+}
 @media only screen and (max-width: 450px) {
-    header .brand{
-      flex-basis: 100%;
-    }
+  header .brand{
+    flex-basis: 100%;
+  }
+  .toggleNav {
+    color: white;
+    display: block;
+    padding: .4em 1em;
+    text-align: center;
+    background: #3498db;
+  }
+  .nav {
+    display: none;
+  }
+  .open {
+    display:flex;
+  }
+  #mycustomform{
+  margin: 0;
+}
 }
