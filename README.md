@@ -17,7 +17,7 @@ ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
     ===========
     3) Procfile
     ===========
-    $ web: gunicorn gettingstarted.wsgi --log-file -
+    web: gunicorn gettingstarted.wsgi --log-file -
 
     =========================
     4) Database configuration
