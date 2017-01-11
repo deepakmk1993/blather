@@ -7,14 +7,16 @@ ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
     $ python manage.py createsuperuser
     $ python manage.py runserver $IP:$PORT
 
-2) Create Virtualenv
-
+    ====================
+    2) Create Virtualenv
+    ====================
     $ virtualenv venv
     $ source venv/bin/activate
     $ pip freeze > requirements.txt
 
-3) Procfile
-
+    ===========
+    3) Procfile
+    ===========
     $ web: gunicorn gettingstarted.wsgi --log-file -
 
     =========================
