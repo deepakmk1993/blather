@@ -1,8 +1,9 @@
 # Deploying Python and Django Apps on Heroku
 ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
 
-1) Run below command to sync models to database and create Django's default superuser and auth system and Run Django
-
+    ====================================================================================================================
+    1) Run below command to sync models to database and create Django's default superuser and auth system and Run Django
+    ====================================================================================================================
     $ python manage.py migrate
     $ python manage.py createsuperuser
     $ python manage.py runserver $IP:$PORT
