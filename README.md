@@ -84,9 +84,9 @@ ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
         psycopg2==2.6.2
         whitenoise==3.2.3
 
-    ====================================================================================================================
-    8) Run below command to sync models to database and create Django's default superuser and auth system and Run Django
-    ====================================================================================================================
+    ======================================================================================
+    8) Run to sync models to database and create Django's default superuser and Run Django
+    ======================================================================================
     $ python manage.py migrate
     $ python manage.py createsuperuser
     $ python manage.py runserver $IP:$PORT
