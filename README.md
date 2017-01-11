@@ -13,7 +13,6 @@ ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
     ====================
     $ virtualenv venv
     $ source venv/bin/activate
-    $ pip freeze > requirements.txt
 
     ===========
     3) Procfile
