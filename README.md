@@ -1,9 +1,9 @@
 # Deploying Python and Django Apps on Heroku
 ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
 
-    ==========
-    .gitignore
-    ==========
+    =====================================
+    1) Create .gitignore
+    =====================================
     venv
     staticfiles
     .env
@@ -23,20 +23,20 @@ ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
     build/
     tests/report/
 
-    ====================
+    =====================================
     2) Create Virtualenv
-    ====================
+    =====================================
     $ virtualenv venv
     $ source venv/bin/activate
 
-    ===========
+    =====================================
     3) Procfile
-    ===========
+    =====================================
     web: gunicorn gettingstarted.wsgi --log-file -
 
-    =========================
+    =====================================
     4) Database configuration
-    =========================
+    =====================================
     Install "psycopg" & "dj-database-url" with the following commands:
     $ sudo easy_install psycopg2
     $ sudo easy_install dj-database-url
@@ -45,9 +45,9 @@ ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
         db_from_env = dj_database_url.config(conn_max_age=500)
         DATABASES['default'].update(db_from_env)
 
-    =============
+    =====================================
     5) WhiteNoise
-    =============
+    =====================================
     $ pip install whitenoise
     wsgi.py
         from django.core.wsgi import get_wsgi_application
@@ -74,9 +74,9 @@ ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
     touch static/.dir
     $ python manage.py collectstatic --noinput
 
-    ===============
+    =====================================
     7) Requirements
-    ===============
+    =====================================
     $ pip freeze > requirements.txt
         Django==1.9
         dj-database-url==0.4.2
