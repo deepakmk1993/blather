@@ -34,8 +34,7 @@ ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
     5) WhiteNoise
     =============
     $ pip install whitenoise
-    $ pip freeze > requirements.txt
-    
+
     wsgi.py
         from django.core.wsgi import get_wsgi_application
         from whitenoise.django import DjangoWhiteNoise
