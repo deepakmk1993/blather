@@ -1,12 +1,27 @@
 # Deploying Python and Django Apps on Heroku
 ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
 
-    ====================================================================================================================
-    1) Run below command to sync models to database and create Django's default superuser and auth system and Run Django
-    ====================================================================================================================
-    $ python manage.py migrate
-    $ python manage.py createsuperuser
-    $ python manage.py runserver $IP:$PORT
+    ==========
+    .gitignore
+    ==========
+    venv
+    staticfiles
+    .env
+    *.sqlite3
+    *.egg-info
+    *.pot
+    *.py[co]
+    .tox/
+    __pycache__
+    MANIFEST
+    dist/
+    docs/_build/
+    docs/locale/
+    node_modules/
+    tests/coverage_html/
+    tests/.coverage
+    build/
+    tests/report/
 
     ====================
     2) Create Virtualenv
@@ -68,3 +83,10 @@ ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
         gunicorn==19.6.0
         psycopg2==2.6.2
         whitenoise==3.2.3
+
+    ====================================================================================================================
+    8) Run below command to sync models to database and create Django's default superuser and auth system and Run Django
+    ====================================================================================================================
+    $ python manage.py migrate
+    $ python manage.py createsuperuser
+    $ python manage.py runserver $IP:$PORT
