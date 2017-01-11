@@ -17,8 +17,9 @@ ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
 
     $ web: gunicorn gettingstarted.wsgi --log-file -
 
-4) Database configuration
-
+    =========================
+    4) Database configuration
+    =========================
     Install "psycopg" & "dj-database-url" with the following commands:
     $ sudo easy_install psycopg2
     $ sudo easy_install dj-database-url
@@ -26,9 +27,6 @@ ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
         import dj_database_url
         db_from_env = dj_database_url.config(conn_max_age=500)
         DATABASES['default'].update(db_from_env)
-    OR
-        import dj_database_url
-        DATABASES['default'] =  dj_database_url.config()
 
     5) WhiteNoise
     =============
